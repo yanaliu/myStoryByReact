@@ -1,4 +1,10 @@
 /* Base Application Styles */
+@font-face {
+  font-family: "icons-turn";
+  src: url("../font/icon/turn.svg") format("svg"), url("../font/icon/turn-arrow.woff") format("woff");
+
+}
+
 html,body {
   width: 100%;
   height: 100%;
@@ -90,5 +96,30 @@ html,body {
 
   width: 100%;
   text-align: center;
+  @at-root {
+    .controller-unit {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background-color: #aaa;
+      text-align: center;
+      cursor: pointer;
+      transform: scale(0.5);
+      vertical-align: middle;
+
+      &.is-center {
+        transform: scale(1);
+        background-color: #888;
+        &::after {
+          font-family:"icons-turn";
+          content: "\e600";
+          color: #fff;
+          line-height: 30px;
+        }
+      }
+    }
+  }
 }
 /*controller end*/
